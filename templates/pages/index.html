@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<section class="section1" id="section1">
+        
+    <div class="info">
+       
+        <h1 class="name"><span class="hilight">Hi</span> i'm <span class="hilight">H</span>oudaci <span class="hilight">B</span>rahim!</h1>
+           <h1> welcome to my portfiolio
+        </h1>
+        <p>if you want to know more about me go to about section or another section in the sidebar (; </p>
+        <button onclick="navigateToSection('section2')">read more </button>
+
+    </div>
+</section>
+<section id="section2" class="about">
+    <div class="image">
+
+    </div>
+    
+    <div class="informations">
+        <h1><span class="hilight">A</span>BOUT <span class="hilight">M</span>E</h1>
+        <p class="myp" style="white-space: pre-line;">{{abouttext.text}}</P>
+        <button id="projects" onclick="navigateToSection('section3')">projects</button>
+    </div>
+   
+    
+</section>
+<section class="projects" id="section3">
+    {% for project in projects %}
+    <div class="project">
+    {% if project.pr_photo %}
+         <img src="{{ project.pr_photo.url }}" alt="Project 1">
+     {% else %}
+      <img src="{% static 'frontend/default.jpg' %}" alt="Default Project Image">
+     {% endif %}
+    <div class="project-info">
+            <h3>{{project.projectname}}</h3>
+            <p>{{project.description}}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+    
+    
+</section>
+
+{% endblock %}

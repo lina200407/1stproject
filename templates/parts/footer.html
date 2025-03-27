@@ -1,0 +1,25 @@
+<section class="contactme" id="section4">
+    <h1>Thank You for Reading</h1>
+    <p>If you need more information or any service, you can contact me on:</p>
+    <div class="contact-links">
+        {% if contactme.facebook %}
+        <a href="{{contactme.facebook}}" target="_blank">
+            <i class="fab fa-facebook fa-3x"></i>
+        </a>
+        {% endif %}
+        {% if contactme.instagram %}
+        <a href="{{contactme.instagram}}" target="_blank">
+            <i class="fab fa-instagram fa-3x"></i>
+        </a>
+        {% endif %}
+        {% if contactme.linkedin %}
+        <a href="{{contactme.linkedin}}" target="_blank">
+            <i class="fab fa-linkedin fa-3x"></i>
+        </a>
+        {% endif %}
+    </div>
+    {% if contactme.phone %}
+    <p class="phone">📞 +{{contactme.phone}}</p>
+    {% endif %}
+
+</section>
